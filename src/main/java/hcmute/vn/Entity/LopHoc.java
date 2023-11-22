@@ -27,11 +27,11 @@ public class LopHoc implements Serializable {
 	private String HocPhi;
 	private String BuoiHoc;
 	@ManyToOne
-	@JoinColumn(name ="[phuhuynh]")
-	private int MaPhuHuynh;
+	@JoinColumn(name ="maPhuHuynh")
+	private PhuHuynh phuHuynh;
 	private String YeuCau;
 	@ManyToOne
-	@JoinColumn(name ="[giasu]")
-	private int MaGiaSu;
+	@JoinColumn(name ="maGiaSu")
+	private GiaSu GiaSu;
 	private int TrangThai;
 }
