@@ -1,4 +1,4 @@
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="icon" type="text/x-icon" href="/Pic/logo.png">
     <meta charset="UTF-8">
@@ -9,6 +9,31 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="bg">
+<!--tesst-->
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>TenLop</th>
+        <!-- Add more columns based on your LopHoc entity properties -->
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterate over the list of LopHoc and display each row -->
+    <tr th:each="lophoc : ${lophoc}">
+        <td th:text="${lophoc.getMaLopHoc()}"></td>
+        <td th:text="${lophoc.getMaLopHoc()}"></td>
+        <!-- Add more cells based on your LopHoc entity properties -->
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+
     <div class="container">
         <div class="menu">
             <img src="/Pic/menu01.png" class="menu img">
@@ -50,44 +75,14 @@
         <head>
             <h3 style="width: 100%; background-color: blue;text-align:center; padding: 20px; margin-top: 30px; color:rgb(243, 244, 247); font-size: 35px">Các Lớp Hiện Có</h3>
         </head>
-    
-        <div class="grid-container">
+
+        <div class="grid-container" th:each="lophoc : ${lophoc}">
             <div class="grid-item">
-                <h2>TOÁN 10</h2>
-                <p>Nội dung ô 1 ở đây...</p>
+                <h2 th:text="${'Lớp học: ' + lophoc.getMonHoc()}"></h2>
+                <!-- Replace 'maLopHoc' with the actual property name in your LopHoc class -->
+                <p th:text="${'Nội dung ô 1 ở đây...'}"></p>
             </div>
-            <div class="grid-item">
-                <h2>TOÁN 11</h2>
-                <p>Nội dung ô 2 ở đây...</p>
-            </div>
-            <div class="grid-item">
-                <h2>TOÁN 12</h2>
-                <p>Nội dung ô 3 ở đây...</p>
-            </div>
-            <div class="grid-item">
-                <h2>LÝ 10</h2>
-                <p>Nội dung ô 4 ở đây...</p>
-            </div>
-            <div class="grid-item">
-                <h2>LÝ 11</h2>
-                <p>Nội dung ô 5 ở đây...</p>
-            </div>
-            <div class="grid-item">
-                <h2>LÝ 12</h2>
-                <p>Nội dung ô 6 ở đây...</p>
-            </div>
-            <div class="grid-item">
-                <h2>HOÁ 10</h2>
-                <p>Nội dung ô 4 ở đây...</p>
-            </div>
-            <div class="grid-item">
-                <h2>HOÁ 11</h2>
-                <p>Nội dung ô 5 ở đây...</p>
-            </div>
-            <div class="grid-item">
-                <h2>HOÁ 12</h2>
-                <p>Nội dung ô 6 ở đây...</p>
-            </div>
+
         </div>
     
         <div class="footer">

@@ -16,7 +16,7 @@ public class AdminQuanLiGiaSu {
 	@Autowired
 	IGiaSuService giasuService;
 	
-	@RequestMapping("/AdminQuanLiGiaSu.html")
+	@RequestMapping("/AdminQuanLiGiaSu")
 	public String list(ModelMap model) {
 		List<GiaSu> list = giasuService.findAll();
 		model.addAttribute("giasu", list);
